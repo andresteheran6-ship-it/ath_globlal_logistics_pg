@@ -46,14 +46,21 @@
   <!-- Hero -->
  <main>
   <section id="home" class="hero">
-    <img class="hero-bg" src="images/fondo.jpg" alt="Logistics background">
-    <div class="overlay"></div>
-    <div class="hero-content container">
-      <h1>Connecting your business to the world</h1>
-      <p>Global freight, warehousing and end-to-end logistics solutions tailored to your needs.</p>
-      <a href="#contact" class="btn">Get a Quote</a>
-    </div>
-  </section>
+  <picture class="hero-media">
+    <!-- versión vertical para móviles -->
+    <source srcset="images/fondo2.jpg" media="(max-width: 768px)">
+    <!-- versión horizontal para escritorio -->
+    <img class="hero-bg" src="images/fondo.jpg" alt="ATH Global Logistics - portada">
+  </picture>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content container">
+    <h1>Connecting your business to the world</h1>
+    <p>Global freight, warehousing and end-to-end logistics solutions tailored to your needs.</p>
+    <a href="#contact" class="btn">Get a Quote</a>
+  </div>
+</section>
 </main>
 
     <!-- About (simple, puedes editar) -->
