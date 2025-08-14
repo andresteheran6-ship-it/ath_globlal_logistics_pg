@@ -505,6 +505,13 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
   text-decoration: none;
 }
+/* ====== Responsive: Ajuste de logo y texto en móviles ====== */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.5rem;   /* De 1.8rem → 1.5rem en móviles */
+    letter-spacing: 1.5px; /* Un poco menos de espacio entre letras */
+  }
+}
 /* HERO: imagen responsive por dispositivo */
 .hero {
   position: relative;
