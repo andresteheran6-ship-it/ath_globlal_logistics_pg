@@ -100,14 +100,36 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.hero-bg {
+/* ==================== HERO SECTION - CORREGIDO PARA MÓVILES ==================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;     /* Ocupa toda la altura del dispositivo */
+  height: 100vh;         /* Fuerza a que ocupe toda la pantalla */
+  max-height: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-media {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  z-index: -2;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Cubre todo el contenedor */
+  object-position: center;     /* Centra la imagen */
+  display: block;
 }
 
 .overlay {
@@ -120,30 +142,39 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
 }
 
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+    /* Asegura que no haya scroll extra */
+    overflow: hidden;
+  }
 
-.btn {
-  display: inline-block;
-  background: #0056b3;
-  color: #fff;
-  padding: 15px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
-}
+  .hero-media img {
+    object-position: center; /* Ajusta si fondo2.jpg tiene el sujeto centrado */
+  }
 
-.btn:hover {
-  background: #003d82;
+  /* Opcional: si fondo2.jpg es muy clara, ajusta el overlay */
+  .overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
 }
 
 /* About */
@@ -473,4 +504,46 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
   text-decoration: none;
+}
+/* HERO: imagen responsive por dispositivo */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: auto;          /* evita ocupar toda la pantalla */
+  min-height: 60vh;      /* alto cómodo en desktop */
+  color: #fff;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;              /* top/right/bottom/left: 0 */
+  z-index: -2;           /* detrás de overlay y contenido */
+}
+
+.hero-media img.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* llena el contenedor sin deformar */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* oscurece la imagen */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;            /* por encima de la imagen/overlay */
+  text-align: center;
+  padding: 80px 20px;    /* espacio vertical */
+}
+
+/* Altura específica en móviles para evitar cortes/grises */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 320px;   /* alto fijo cómodo para móvil */
+  }
 }
