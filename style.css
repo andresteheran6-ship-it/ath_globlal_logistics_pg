@@ -600,3 +600,28 @@ h1, h2, h3, h4, h5, h6 {
 .contact-form button:hover {
   background: #003f82;
 }
+/* Banner negro debajo del formulario */
+.contact-email-banner {
+  background-color: #000;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+.contact-email-banner p {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.contact-email-banner a {
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-email-banner a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
